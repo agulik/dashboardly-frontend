@@ -6,19 +6,59 @@ import './Menu.css';
 
 
 class Menu extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   handleClickOutside = () => {
     this.props.closeMenu();
   }
 
   render() {
-    let { closeMenu, show } = this.props
+    let { closeMenu, show, user } = this.props
     const isLoggedIn = auth.isLoggedIn()
+
+    if (user) {
+      return (
+        <div className={`menu ${show?"show":""}`}>
+
+          <div className="menu__header">
+            <img src={user.body.avatarUrl} alt="profile-pic" className="menu__avatar"/>
+          </div>
+
+          <div className="menu__list">
+
+            <Link to="/" className="menu__item" onClick={closeMenu}>
+              Home
+            </Link>
+
+            {!isLoggedIn ?
+              <Link to="/login" className="menu__item" onClick={closeMenu}>
+                Login
+              </Link>
+            : null}
+
+            {!isLoggedIn ?
+              <Link to="/signup" className="menu__item" onClick={closeMenu}>
+                Signup
+              </Link>
+            : null}
+
+            {isLoggedIn ?
+              <Link to="/logout" className="menu__item" onClick={closeMenu}>
+                Logout
+              </Link>
+            : null}
+          </div>
+
+        </div>
+      )
+    }
     return (
       <div className={`menu ${show?"show":""}`}>
 
         <div className="menu__header">
-          <img src="" alt="profile-pic" className="menu__avatar"/>
+          <img src="user.avatarUrl" alt="profile-pic" className="menu__avatar"/>
         </div>
 
         <div className="menu__list">

@@ -36,6 +36,11 @@ class Api {
     .get(`${API_HOST}/boards/${boardId}/bookmarks`)
   )
 
+  getUser = () => {
+    return superagent
+    .get(`${API_HOST}/auth/me`)
+  }
+
 }
 
 export default new Api();
