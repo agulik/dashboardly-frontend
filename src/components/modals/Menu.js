@@ -6,7 +6,7 @@ import './Menu.css';
 
 
 class Menu extends Component {
-  
+
   handleClickOutside = () => {
     this.props.closeMenu();
   }
