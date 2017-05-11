@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import auth from '../../auth'
+import auth from '../../auth';
 import './SignUp.css';
 
 const ENTER = 13;
@@ -16,24 +16,24 @@ export default class SignUp extends Component {
     if (email && password) {
       auth.signup(email, password)
       .then(res => this.props.router.push('/login'))
-      .catch(console.error)
+      .catch(console.error);
     }
     else {
-      this.setState({ error: "Please enter both an email and password"})
+      this.setState({ error: "Please enter both an email and password"});
     }
   }
 
   _handleTyping = (e) => {
     if (this.state && this.state.error) {
-      this.setState({ error: null })
+      this.setState({ error: null });
     }
     if (e.keyCode===ENTER) {
-      this._handleSignUp()
+      this._handleSignUp();
     }
   }
 
   render() {
-    let {error} = this.state
+    let {error} = this.state;
     return (
 
       <div>

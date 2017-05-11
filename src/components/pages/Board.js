@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import api from '../../api';
 import BookmarkCard from '../elements/BookmarkCard';
-import auth from '../../auth';
+// import auth from '../../auth';
 import './Board.css';
 
 export default class Board extends Component {

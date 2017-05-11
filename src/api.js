@@ -1,5 +1,5 @@
-import superagent from 'superagent'
-import { API_HOST } from './config'
+import superagent from 'superagent';
+import { API_HOST } from './config';
 
 class Api {
 
@@ -38,7 +38,7 @@ class Api {
 
   getUser = () => {
     return superagent
-    .get(`${API_HOST}/auth/me`)
+    .get(`${API_HOST}/auth/me`);
   }
 
 }

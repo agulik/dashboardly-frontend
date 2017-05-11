@@ -8,15 +8,15 @@ module.exports = {
 
   signup(email, pass) {
     if (localStorage.user) {
-      throw new Error('User already exists!')
+      throw new Error('User already exists!');
     } else {
-      return api.requestSignUp(email, pass)
+      return api.requestSignUp(email, pass);
     }
   },
 
   login(email, pass) {
     if (localStorage.token) {
-      throw new Error('Already logged in')
+      throw new Error('Already logged in');
     }
     else {
       return api.requestLogin(email, pass)
@@ -30,11 +30,11 @@ module.exports = {
 
   logout() {
     return api.requestLogout(localStorage.token)
-    .then(res => delete localStorage.token)
+    .then(res => delete localStorage.token);
   },
 
   isLoggedIn() {
     return !!localStorage.token
   },
 
-}
+};

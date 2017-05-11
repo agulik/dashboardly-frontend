@@ -3,20 +3,21 @@ import { Link } from 'react-router';
 import onClickOutside from 'react-onclickoutside';
 import auth from '../../auth';
 import './Menu.css';
+import Logout from './Logout.js';
 
 
 class Menu extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   handleClickOutside = () => {
     this.props.closeMenu();
   }
 
   render() {
-    let { closeMenu, show, user } = this.props
-    const isLoggedIn = auth.isLoggedIn()
+    let { closeMenu, show, user } = this.props;
+    const isLoggedIn = auth.isLoggedIn();
 
     if (user) {
       return (
@@ -45,14 +46,12 @@ class Menu extends Component {
             : null}
 
             {isLoggedIn ?
-              <Link to="/logout" className="menu__item" onClick={closeMenu}>
-                Logout
-              </Link>
+              <Logout className="menu__item" onClick={closeMenu}/>
             : null}
           </div>
 
         </div>
-      )
+      );
     }
     return (
       <div className={`menu ${show?"show":""}`}>
@@ -80,9 +79,7 @@ class Menu extends Component {
           : null}
 
           {isLoggedIn ?
-            <Link to="/logout" className="menu__item" onClick={closeMenu}>
-              Logout
-            </Link>
+            <Logout className="menu__item" onClick={closeMenu}/>
           : null}
         </div>
 
