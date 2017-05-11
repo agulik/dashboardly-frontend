@@ -48,6 +48,10 @@ a {
   .App-navbar {
     background-color: #1A8571;
     height: 53px;
+    -webkit-box-shadow: 2px 10px 24px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 24px -11px rgba(0,0,0,0.75);
+    box-shadow: 2px 10px 24px -11px rgba(0,0,0,0.75);
+
   }
   
   .App-navbar__title {

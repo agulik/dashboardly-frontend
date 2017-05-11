@@ -19,7 +19,7 @@
   color: #767676;
 }
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width:500px) {
   .board-card {
     width: 288px;
     border-radius: 3px;
