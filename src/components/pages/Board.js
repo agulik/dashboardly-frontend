@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import api from '../../api';
 import BookmarkCard from '../elements/BookmarkCard';
-// import auth from '../../auth';
+import AddButton from '../elements/AddButton';
+import CreateBookmark from '../modals/CreateBookmark';
+import auth from '../../auth';
 import './Board.css';
 
 export default class Board extends Component {
@@ -11,14 +13,15 @@ export default class Board extends Component {
       title: "",
       description: "",
       bookmarks: [],
-      updatedAt: ""
+      updatedAt: "",
+      isCreateBookmarkOpen: false
     };
   }
-  
+
   componentDidMount() {
     this.fetchBoardData()
   }
-  
+
   fetchBoardData = () => {
       Promise.all([
         api.getBoard(this.props.params.id),
@@ -34,8 +37,16 @@ export default class Board extends Component {
       .catch(console.error)
   }
 
+  _handleAddButtonClick = () => {
+    let { isCreateBookmarkOpen } = this.state;
+
+    this.setState({ isCreateBookmarkOpen: !isCreateBookmarkOpen })
+  }
+
+  closeCreateBookmark = () => this.setState({ isCreateBookmarkOpen: false })
+
   render() {
-    let { bookmarks } = this.state
+    let { bookmarks, isCreateBookmarkOpen } = this.state
     return (
       <div className="board">
         { bookmarks.map(b =>
@@ -47,6 +58,11 @@ export default class Board extends Component {
             url={b.url}
           />
         )}
+
+        {auth.isLoggedIn() ? <AddButton _handleAddButtonClick={this._handleAddButtonClick} /> : null}
+
+        { isCreateBookmarkOpen ? <CreateBookmark closeCreateBookmark={this.closeCreateBookmark} /> : null}
+
       </div>
     );
   }

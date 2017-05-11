@@ -29,12 +29,18 @@ export default class Home extends Component {
   }
 
   _handleAddButtonClick = () => {
-    let {isCreateBoardOpen} = this.state;
+    let { isCreateBoardOpen } = this.state;
 
     this.setState({ isCreateBoardOpen: !isCreateBoardOpen })
   }
 
   closeCreateBoard = () => this.setState({ isCreateBoardOpen: false })
+
+  // you can't add an event handler to a component itself (in this case add button)
+  // you have to pass in the event handler function as a prop to the component
+  // inside that component, you import props and add an onclick event to the div
+  // you then assign the props value function to that onclick event
+  // the onclick event inside the add button then fires the event handler function in this component
 
   render() {
     let { boards, isCreateBoardOpen } = this.state
@@ -51,6 +57,7 @@ export default class Home extends Component {
           />
           )}
         </div>
+
         {auth.isLoggedIn() ? <AddButton _handleAddButtonClick={this._handleAddButtonClick} /> : null}
 
         { isCreateBoardOpen ? <CreateBoard closeCreateBoard={this.closeCreateBoard} /> : null}
