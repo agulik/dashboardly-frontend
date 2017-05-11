@@ -7,9 +7,9 @@ import Logout from './Logout.js';
 
 
 class Menu extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props)
+   }
 
   handleClickOutside = () => {
     this.props.closeMenu();
@@ -24,7 +24,7 @@ class Menu extends Component {
         <div className={`menu ${show?"show":""}`}>
 
           <div className="menu__header">
-            <img src={user.body.avatarUrl} alt="profile-pic" className="menu__avatar"/>
+            <img src={user.avatarUrl} alt="profile-pic" className="menu__avatar"/>
           </div>
 
           <div className="menu__list">

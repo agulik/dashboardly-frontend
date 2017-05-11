@@ -1,10 +1,14 @@
 .menu {
-  width: 270px;
+  width: 188px;
+  height: 214px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  background: lightgrey;
+  background: #FAFAFA;
+  -webkit-box-shadow: 5px 5px 33px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 33px -6px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 33px -6px rgba(0,0,0,0.75);
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -21,12 +25,14 @@
 }
 
 .menu__header {
-  height: 160px;
+  background-color: #616161;
+  height: 116px;
+  margin-bottom: 18px;
 }
 
 .menu__avatar {
-  height: 60px;
-  width: 60px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   background: green;
   margin: 1rem;
@@ -35,4 +41,13 @@
 .menu__list {
   display: flex;
   flex-flow: column;
+  padding-left: 20px;
+  padding-bottom: 13px;
+  line-height: 20px;
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+.menu__list a:hover {
+  color: #67A9DF;
 }
