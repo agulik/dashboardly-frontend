@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import api from '../../api';
 import './CreateBoard.css';
+
+const ENTER = 13;
 
 export default class CreateBoard extends Component {
   constructor(props) {
@@ -10,9 +13,10 @@ export default class CreateBoard extends Component {
   _handleCreateBoard = () => {
     let { title: {value: title}, description: {value: description} } = this.refs;
 
-    if (title && descriptions) {
-      auth.signup(email, password)
-      .then(res => this.props.router.push('/boards/:id'))
+    if (title && description) {
+      api.createBoard(title, description)
+      .then(res => console.log(res))
+        // this.props.router.push('/boards'))
       .catch(console.error)
     }
     else {
@@ -25,14 +29,17 @@ export default class CreateBoard extends Component {
       this.setState({ error: null })
     }
     if (e.keyCode===ENTER) {
-      this._handleSignUp()
+      this._handleCreateBoard()
     }
   }
 
   render() {
+    let {error} = this.state
     return (
+
       <div className='create_board'>
         <h1>Create New Board</h1>
+        <span>{error}</span>
         <input type="text" ref="title" placeholder="Title"
           onKeyUp={this._handleTyping}
         />

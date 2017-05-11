@@ -41,6 +41,12 @@ class Api {
     .get(`${API_HOST}/auth/me`)
   }
 
+  createBoard = (title, description) => {
+    return superagent
+    .post(`${API_HOST}/boards`)
+    .send({ title, description })
+  }
+
 }
 
 export default new Api();
