@@ -9,8 +9,10 @@ export default class CreateBoard extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Title</h1>
+      <div className='modal'>
+        <h1>Create New Board</h1>
+        <p>Title</p>
+        <p>Description</p>
       </div>
     );
   }

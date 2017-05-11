@@ -3,6 +3,7 @@ import api from '../../api';
 import BoardCard from '../elements/BoardCard';
 import AddButton from '../elements/AddButton';
 import auth from '../../auth';
+import CreateBoard from '../modals/CreateBoard';
 import './Home.css';
 
 
@@ -10,14 +11,15 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      boards: []
+      boards: [],
+      isCreateBoardOpen: false
     };
   }
-  
+
   componentDidMount() {
     this._fetchBoards();
   }
-  
+
   _fetchBoards = () => {
     api.getBoardsList()
     .then(res => {
@@ -26,11 +28,20 @@ export default class Home extends Component {
     .catch(console.error)
   }
 
+  _handleAddButtonClick = () => {
+    let {isCreateBoardOpen} = this.state;
+
+    this.setState({ isCreateBoardOpen: !isCreateBoardOpen })
+  }
+
+  closeCreateBoard = () => this.setState({ isCreateBoardOpen: false })
+
   render() {
-    let { boards } = this.state
+    let { boards, isCreateBoardOpen } = this.state
     return (
       <div className="home">
-        { boards.map(b =>
+        <div>
+          { boards.map(b =>
           <BoardCard
             key={b.id}
             id={b.id}
@@ -38,8 +49,11 @@ export default class Home extends Component {
             description={b.description}
             updatedAt={b.updatedAt}
           />
-        )}
-        {auth.isLoggedIn() ? <AddButton /> : null}
+          )}
+        </div>
+        {auth.isLoggedIn() ? <AddButton _handleAddButtonClick={this._handleAddButtonClick} /> : null}
+
+        { isCreateBoardOpen ? <CreateBoard closeCreateBoard={this.closeCreateBoard} /> : null}
       </div>
     );
   }
