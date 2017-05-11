@@ -7,6 +7,9 @@ class Api {
     superagent
     .post(`${API_HOST}/auth/users`)
     .send({ email, password })
+    .catch((e) => {
+      console.log('error', e)
+    })
   )
 
   requestLogin = (email, password) => (
@@ -36,15 +39,37 @@ class Api {
     .get(`${API_HOST}/boards/${boardId}/bookmarks`)
   )
 
-  getUser = () => {
+  getUser = (token) => {
     return superagent
     .get(`${API_HOST}/auth/me`)
+    // .send({token})
+    // .set(‘Authorization’, `token ${token}`)
+    // .set(‘Accept’, ‘application/json’)
+    .then(user => {
+      return JSON.parse(user.text);
+    })
   }
 
   createBoard = (title, description) => {
-    return superagent
-    .post(`${API_HOST}/boards`)
-    .send({ title, description })
+    // return this.getUser(localStorage.token)
+    // .then((user) => {
+      return superagent
+      .post(`${API_HOST}/boards`)
+      .send({title, description})
+      //  })
+      // .set(‘Authorization’, `token ${localStorage.token}`)
+      // .set(‘Accept’, ‘application/json’)
+    // })
+
+  }
+
+  createBookmark = (url, name, description) => {
+    console.log(url, name, description)
+    // return this.getUser(localStorage.token)
+    // .then((user) => {
+      return superagent
+      .post(`${API_HOST}/boards`)
+      .send({url, name, description})
   }
 
 }

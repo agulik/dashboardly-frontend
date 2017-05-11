@@ -29,7 +29,7 @@ export default class Home extends Component {
   }
 
   _handleAddButtonClick = () => {
-    let {isCreateBoardOpen} = this.state;
+    let { isCreateBoardOpen } = this.state;
 
     this.setState({ isCreateBoardOpen: !isCreateBoardOpen })
   }

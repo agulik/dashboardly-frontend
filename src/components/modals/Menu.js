@@ -23,7 +23,7 @@ class Menu extends Component {
         <div className={`menu ${show?"show":""}`}>
 
           <div className="menu__header">
-            <img src={user.body.avatarUrl} alt="profile-pic" className="menu__avatar"/>
+            <img src={user.avatarUrl} alt="profile-pic" className="menu__avatar"/>
           </div>
 
           <div className="menu__list">

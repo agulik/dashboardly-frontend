@@ -15,13 +15,15 @@ export default class CreateBoard extends Component {
 
     if (title && description) {
       api.createBoard(title, description)
-      .then(res => console.log(res))
-        // this.props.router.push('/boards'))
+      .then(res => console.log(res)
+      // this.props.router.push('/')
+    )
       .catch(console.error)
     }
     else {
       this.setState({ error: "Please enter both a title and description"})
     }
+    this.props.closeCreateBoard();
   }
 
   _handleTyping = (e) => {
