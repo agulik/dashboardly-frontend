@@ -31,7 +31,7 @@ a {
 .App-navbar__title {
   margin: 0;
   color: DarkSeaGreen;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   text-decoration: none;
 }
 
@@ -42,4 +42,15 @@ a {
 
 .settings-icon:hover, .menu-icon:hover, .App-navbar__title:hover {
   color: DarkOliveGreen;
+}
+
+@media only screen and (max-device-width: 500px) {
+  .App-navbar {
+    background-color: #1A8571;
+    height: 53px;
+  }
+  
+  .App-navbar__title {
+    color: #00000;
+  }
 }
