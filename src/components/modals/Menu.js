@@ -6,9 +6,9 @@ import './Menu.css';
 
 
 class Menu extends Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props)
+  }
 
   handleClickOutside = () => {
     this.props.closeMenu();
