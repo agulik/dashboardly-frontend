@@ -9,14 +9,15 @@ import Logout from './Logout.js';
 class Menu extends Component {
   constructor(props) {
     super(props)
-      }
-   }
+    }
+
 
   handleClickOutside = () => {
     this.props.closeMenu();
   }
 
   render() {
+
     let { closeMenu, show, user } = this.props;
     const isLoggedIn = auth.isLoggedIn();
 
@@ -87,7 +88,6 @@ class Menu extends Component {
       </div>
     );
   }
-
 }
 
 export default onClickOutside(Menu);
