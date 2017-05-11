@@ -11,7 +11,7 @@ class Logout extends React.Component {
     _handleLogout = () => {
       if (localStorage.token) {
         auth.logout()
-        .then(localStorage.clear())
+        .then(localStorage.removeItem('token'))
         .catch(console.error);
       } 
     else {
