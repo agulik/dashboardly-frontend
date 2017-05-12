@@ -12,10 +12,11 @@ export default class CreateBoard extends Component {
 
   _handleCreateBoard = () => {
     let { title: {value: title}, description: {value: description} } = this.refs;
-    
+
     if (title && description) {
       api.createBoard(title, description)
       .then(res => console.log(res)
+        // console.log(res)
       // this.props.router.push('/')
     )
       .catch(console.error)

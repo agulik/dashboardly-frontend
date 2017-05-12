@@ -43,24 +43,16 @@ class Api {
     return superagent
     .get(`${API_HOST}/auth/me`)
     // .send({token})
-    // .set(‘Authorization’, `token ${token}`)
-    // .set(‘Accept’, ‘application/json’)
-    .then(user => {
-      return JSON.parse(user.text);
-    })
+    // .set('Authorization', `token ${token}`)
+    // .set('Accept', 'application/json')
   }
 
   createBoard = (title, description) => {
-    // return this.getUser(localStorage.token)
-    // .then((user) => {
-      return superagent
-      .post(`${API_HOST}/boards`)
-      .send({title, description})
-      //  })
-      // .set(‘Authorization’, `token ${localStorage.token}`)
-      // .set(‘Accept’, ‘application/json’)
-    // })
-
+        return superagent
+        .post(`${API_HOST}/boards`)
+        .send({title, description})
+        .set('Authorization', `token ${localStorage.token}`)
+        .set('Accept', 'application/json')
   }
 
   createBookmark = (url, name, description) => {

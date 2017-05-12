@@ -45,7 +45,6 @@ export default class Home extends Component {
 
   render() {
     let { boards, isCreateBoardOpen } = this.state
-    console.log(boards);
     return (
       <div className="home">
         <div>
