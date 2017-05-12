@@ -23,8 +23,9 @@ export default class Home extends Component {
   _fetchBoards = () => {
     api.getBoardsList()
     .then(res => {
-      this.setState({ boards: res.body.boards })
-    })
+      this.setState({ boards: res.body })
+    }
+  )
     .catch(console.error)
   }
 
@@ -44,6 +45,7 @@ export default class Home extends Component {
 
   render() {
     let { boards, isCreateBoardOpen } = this.state
+    console.log(boards);
     return (
       <div className="home">
         <div>
