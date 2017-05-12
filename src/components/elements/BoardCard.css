@@ -19,6 +19,13 @@
   color: #767676;
 }
 
+hr {
+  color: #c7c7c7;
+  width: 80%;
+  height: 1;
+  float: right;
+}
+
 @media only screen and (max-device-width:500px) {
   .board-card {
     width: 288px;
