@@ -58,7 +58,7 @@ export default class Board extends Component {
             url={b.url}
           />
         )}
-
+      
         {auth.isLoggedIn() ? <AddButton _handleAddButtonClick={this._handleAddButtonClick} /> : null}
 
         { isCreateBookmarkOpen ? <CreateBookmark closeCreateBookmark={this.closeCreateBookmark} /> : null}

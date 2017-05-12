@@ -41,13 +41,13 @@ export default class CreateBoookmark extends Component {
       <div className='create_bookmark'>
         <h1>Create New Bookmark</h1>
         <span>{error}</span>
-        <input type="text" ref="url" placeholder="www.instagram.com"
+        <input type="text" ref="url" placeholder="Url Link"
           onKeyUp={this._handleTyping}
         />
-        <input type="text" ref="name" placeholder="Instagram"
+        <input type="text" ref="name" placeholder="Website Name"
           onKeyUp={this._handleTyping}
         />
-        <input type="text" ref="description" placeholder="Instagram is a photo sharing application"
+        <input type="text" ref="description" placeholder="Description"
           onKeyUp={this._handleTyping}
         />
         <button onClick={this._handleCreateBookmark}>Create</button>
