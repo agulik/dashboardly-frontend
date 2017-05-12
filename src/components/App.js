@@ -20,7 +20,6 @@ class App extends Component {
 
   componentDidMount() {
 
-    // got the user
     if(localStorage.token) {
       api.getUser()
       .then((user) => {
