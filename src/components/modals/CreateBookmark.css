@@ -1,4 +1,34 @@
 .create_bookmark {
-    width: 300px;
-    border: 1px solid red;
+  width: 275px;
+  padding: 20px;
+  background-color: white;
+}
+
+.create_bookmark h1 {
+  font-size: 12pt;
+}
+
+.create_bookmark input {
+  background-color: transparent;
+  width: 200px;
+  margin: 4px;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid grey;
+}
+
+
+.create_bookmark input:focus {
+  outline: none;
+}
+
+.create_bookmark button {
+    color: #ffffff;
+    font-size: 10pt;
+    background: #1cdb4c;
+    width: 75px;
+    padding: 7px 20px 8px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    border: none;
 }
