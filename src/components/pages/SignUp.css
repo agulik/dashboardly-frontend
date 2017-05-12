@@ -1,13 +1,35 @@
 .signup {
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .signup input {
+  background-color: transparent;
   width: 200px;
   margin: 4px;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid grey;
 }
 
+.signup input:focus {
+  outline: none;
+}
+
+
 .signup button {
-  margin-top: 10px;
+    color: #ffffff;
+    font-size: 10pt;
+    background: #1cdb4c;
+    width: 90px;
+    padding: 7px 20px 8px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    border: none;
+}
+
+.signup button:hover {
+  background: #499c57;
+  text-decoration: none;
 }

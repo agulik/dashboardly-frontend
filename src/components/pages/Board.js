@@ -48,7 +48,8 @@ export default class Board extends Component {
   render() {
     let { bookmarks, isCreateBookmarkOpen } = this.state
     return (
-      <div className="board">
+      <div>
+        <div className="board">
         { bookmarks.map(b =>
           <BookmarkCard
             key={b.id}
@@ -58,7 +59,7 @@ export default class Board extends Component {
             url={b.url}
           />
         )}
-
+          </div>
         {auth.isLoggedIn() ? <AddButton _handleAddButtonClick={this._handleAddButtonClick} /> : null}
 
         { isCreateBookmarkOpen ? <CreateBookmark closeCreateBookmark={this.closeCreateBookmark} /> : null}

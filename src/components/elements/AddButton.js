@@ -1,4 +1,5 @@
 import React from 'react';
+import './AddButton.css';
 
 export default (props) => (
   <div className="add-button" onClick={() => props._handleAddButtonClick()}>

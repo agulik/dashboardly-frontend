@@ -15,6 +15,7 @@ export default class BoardCard extends Component {
         <div className="board-card">
           <h2>{ title }</h2>
           <p>{ description }</p>
+          <hr/>
         </div>
       </Link>
     );

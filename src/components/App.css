@@ -15,7 +15,9 @@ a {
   flex-flow: column;
   align-items: center;
   background: papayawhip;
-  height: 100vh
+  overflow: auto;
+  height: 100vh;
+  padding-bottom: 20px;
 }
 
 .App-navbar {
