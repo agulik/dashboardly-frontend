@@ -22,8 +22,9 @@ export default class Home extends Component {
 
   _fetchBoards = () => {
     api.getBoardsList()
-    .then(res => {
-      this.setState({ boards: res.body })
+    .then(res => 
+      {
+      this.setState({ boards: res.body.boards })
     }
   )
     .catch(console.error)
