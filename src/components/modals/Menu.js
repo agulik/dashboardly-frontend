@@ -26,7 +26,7 @@ class Menu extends Component {
         <div className={`menu ${show?"show":""}`}>
 
           <div className="menu__header">
-            <img src={user.avatarUrl} alt="profile-pic" className="menu__avatar"/>
+            <img src="https://fbcdn-profile-a.akamaihd.net/static-ak/rsrc.php/v2/yL/r/HsTZSDw4avx.gif" alt="profile-pic" className="menu__avatar"/>
           </div>
 
           <div className="menu__list">
@@ -59,7 +59,7 @@ class Menu extends Component {
       <div className={`menu ${show?"show":""}`}>
 
         <div className="menu__header">
-          <img src="user.avatarUrl" alt="profile-pic" className="menu__avatar"/>
+          <img src="https://fbcdn-profile-a.akamaihd.net/static-ak/rsrc.php/v2/yL/r/HsTZSDw4avx.gif" alt="profile-pic" className="menu__avatar"/>
         </div>
 
         <div className="menu__list">
